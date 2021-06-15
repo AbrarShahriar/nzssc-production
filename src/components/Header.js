@@ -7,6 +7,7 @@ import { screens } from "../screens";
 import banner2 from "../images/banner.png";
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MoreHoriz, MoreVert, MoreVertOutlined } from '@material-ui/icons';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -38,7 +39,10 @@ function Header() {
             {
             mobile 
                 ? 
-                <p>menu</p>
+                <div className="mobile_nav">
+                    <div className="space"></div>
+                    <MoreVert />
+                </div>
                 :
                 <div className="header_items">
                     <Link to='/'>Home</Link>
