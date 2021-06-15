@@ -18,8 +18,9 @@
 }
 
 .hero > img {
-    width: 500px;
-
+    width: 600px;
+    position: relative;
+    z-index: 20;
 }
 
 .hero > * {
@@ -32,34 +33,117 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
-    text-align: left;
+    /* text-align: left; */
     
     color: white;
     text-shadow: 5px 5px rgba(0, 0, 0, .25);
 }
-
-.hero_title h1 {
-    font-size: 3em;
+@media (max-width: 600px) {
+    .hero_title {
+        text-align: center;
+    }
 }
 
-.hero_title h2 {
+.hero_title .hero_banner h1 {
+    font-size: 3em;
+}
+@media (max-width: 600px) {
+    .hero_title .hero_banner h1 {
+        font-size: 2.5em;
+    }
+}
+
+.hero_title .hero_banner h2 {
     font-size: 2.5em;
     line-height: 1em;
     margin-bottom: 10px;
+}
+@media (max-width: 600px) {
+    .hero_title .hero_banner h2 {
+        font-size: 1.75em;
+    }
 }
 
 .hero_title p {
     font-size: 1.2em;
     max-width: 400px;
-    opacity: 0.8;
 
     line-height: 1.2em;
 }
 
+.hero_banner {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+}
+@media (max-width: 600px) {
+    .hero_banner {
+        flex-direction: column;
+    }
+}
+
+.banner_text {
+    text-align: left;
+}
+@media (max-width: 600px) {
+    .banner_text  {
+        text-align: center;
+    }
+}
+
+.hero_title .hero_banner img {
+    width: 130px;
+    object-fit: contain;
+}
+@media (min-width: 600px) {
+    .hero_title .hero_banner img  {
+        margin-left: -20px;
+    }
+}
+
+
+.zoom {
+    animation: zoom 700ms cubic-bezier(.54,.03,.37,1.47) 1500ms 1 forwards;
+    transform: scale(0);
+}
+@keyframes zoom {
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+.slideLeft {
+    animation: slideLeft 1s ease 1 forwards;
+    transform: translateX(-550px);
+}
+
+@keyframes slideLeft {
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.fadeUp {
+    animation: fadeUp 1s ease 1000ms 1 forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeUp {
+    100% {
+        opacity: 0.8;
+        transform: translateY(0);
+    }
+}
+
 .icon {
-    width: 32px;
+    width: 64px;
+    height: 64px;
     fill: mintcream;
-    height: 32px;
 
     position: absolute;
     z-index: 0;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Hero.css'
 import blob from '../images/gradient-blob.png'
 import Atom from './svg/Atom'
@@ -11,8 +11,18 @@ import Relativity from './svg/Relativity'
 // import ill from '../images/Laboratory-cuate.svg'
 // import ill from '../images/Outer space-bro.svg'
 import ill from '../images/Science-bro.svg'
+import { useMediaQuery } from '@material-ui/core';
+import { screens } from "../screens";
+import logo from '../images/blue-logo.svg'
+import Aos from "aos";
 
 function Hero() {
+    const mobile = useMediaQuery(`(max-width: ${screens.mobile}px)`)
+
+    useEffect(() => {
+        Aos.init()
+    }, [])
+
     return (
         <div className='hero'>
             <Atom svgClass='icon icon-1'/>
@@ -24,12 +34,17 @@ function Hero() {
             <Relativity svgClass='icon icon-7'/>
 
             <div className="hero_title">
-                <h1>NZS</h1>
-                <h2>Science Club</h2>
-                <p>Conserve resources, sustain life, educate humans to be technologically progressive.</p>
+                <div className="hero_banner slideLeft">
+                    <img id='logo'  src={logo} alt=""/>
+                    <div className="banner_text">
+                        <h1>NZS</h1>
+                        <h2>Science Club</h2>
+                    </div>
+                </div>
+                <p className='subtitle fadeUp'>"Conserve resources, sustain life, educate humans to be technologically progressive."</p>
             </div>
 
-            <img src={ill} alt=""/>
+            {!mobile && <img className='zoom' src={ill} alt=""/>}
         </div>
     )
 }

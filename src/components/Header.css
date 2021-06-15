@@ -23,7 +23,13 @@
     align-items: center;
     justify-content: space-around;
     /* outline: 2px solid red; */
+    margin-left: auto;
     margin-right: 50px;
+}
+
+.header p {
+    margin-left: auto;
+    margin-right: 20px;
 }
 
 .header_items > * {
@@ -36,6 +42,7 @@
     transition: all 100ms ease;
     color: #0F1245;
     background: #FF475A;
+    background-image: linear-gradient(90deg, #FF475A, #ff479d);
     padding: 10px 20px;
     border-radius: 20px;
     box-shadow: 1px 1px 7px -5px rgba(0,0,0,.75);
@@ -44,7 +51,9 @@
 
 .header_items > a:hover {
     transform: scale(1.1);
-    background-color: #FFE944;
+    /* background-image: linear-gradient(90deg, #ff479d, #FF475A); */
+    filter: hue-rotate(10deg);
+
 }
 
 .header_avatar {

@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './ContentCard.css'
 import { Link } from "react-router-dom";
 import { MoreHorizRounded } from '@material-ui/icons';
 
 function ContentCard({ type, img, title, desc, tags, timestamp, author, authorImg }) {
+
     return (
         <div className='card'>
 

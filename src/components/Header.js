@@ -25,17 +25,17 @@ function Header() {
             logoText: logoTextRef.current,
         }
 
-        gsap.to(elements.logo, 
-        {
-            x: -500,
-            scrollTrigger: {
-                trigger: document.querySelector('.search'),
-                start: 'top center+=100',
-                toggleActions: 'play none none reverse',
-                // markers: true
-            }
-        }
-        )
+        // gsap.to(elements.logo, 
+        // {
+        //     x: -500,
+        //     scrollTrigger: {
+        //         trigger: document.querySelector('.search'),
+        //         start: 'top center',
+        //         toggleActions: 'play none none reverse',
+        //         // markers: true
+        //     }
+        // }
+        // )
 
         // gsap.to(elements.logoText, 
         // {
@@ -55,13 +55,13 @@ function Header() {
 
     return (
         <div className={`header ${show && `header_bg`}`}>
-            <div ref={logoRef} className="header_banner">
+            {/* <div ref={logoRef} className="header_banner">
                 <img id='logo'  src={logo} alt=""/>
                 <div ref={logoTextRef} className="banner_text">
                     <span className='nzs'>Noakhali Zilla School</span>
                     <span className='sc'>Science Club</span>
                 </div>
-            </div>
+            </div> */}
             
 
             {
