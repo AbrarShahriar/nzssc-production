@@ -20,36 +20,7 @@ function Header() {
     const [show, setShow] = useState(false)
 
     useEffect(() => {
-        const elements = {
-            logo: logoRef.current,
-            logoText: logoTextRef.current,
-        }
-
-        // gsap.to(elements.logo, 
-        // {
-        //     x: -500,
-        //     scrollTrigger: {
-        //         trigger: document.querySelector('.search'),
-        //         start: 'top center',
-        //         toggleActions: 'play none none reverse',
-        //         // markers: true
-        //     }
-        // }
-        // )
-
-        // gsap.to(elements.logoText, 
-        // {
-        //     duration: 1,
-        //     y: -200,
-        //     opacity: 0,
-        //     scrollTrigger: {
-        //         trigger: document.querySelector('.search'),
-        //         start: 'top center+=100',
-        //         toggleActions: 'play none none reverse',
-        //         // markers: true
-        //     }
-        // }
-        // )
+        
 
     }, [])
 
