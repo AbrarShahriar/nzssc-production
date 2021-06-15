@@ -1,0 +1,21 @@
+.title h3 {
+    margin-left: 50px;
+    /* background: rgba(124, 104, 238, 0.562); */
+    padding: 10px;
+    color: #0F1245;
+    border-radius: 20px;
+    width: fit-content;
+    text-transform: uppercase;
+    /* box-shadow: 2px 2px 7px -3px rgba(0,0,0,.75); */
+    /* outline: 2px solid red; */
+    position: relative;
+    z-index: 3;
+
+    font-size: 1.3em;
+}
+
+@media (max-width: 600px) {
+    .title h3 {
+        margin-left: 20px;
+    }
+}

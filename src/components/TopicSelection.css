@@ -1,0 +1,48 @@
+.topicSelection {
+    background-color: mintcream;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+
+    margin-right: 50px;
+
+    box-shadow: 2px 2px 7px -3px rgba(0,0,0,.75);
+}
+
+@media (max-width: 600px) {
+    .topicSelection {
+        margin-right: 20px;
+    }
+}
+
+.topicSelection:hover {
+    background-color: rgb(231, 236, 234);
+}
+
+.line {
+    border-radius: 20px;
+    background-color: #0F1245;
+    height: 4px;
+}
+
+.long {
+    width: 30px;
+    margin-bottom: 2px;
+}
+
+.mid {
+    width: 20px;
+}
+
+.short {
+    width: 10px;
+    margin-top: 2px;
+
+}
+
