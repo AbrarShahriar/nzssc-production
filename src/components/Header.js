@@ -18,24 +18,13 @@ function Header() {
 
     const mobile = useMediaQuery(`(max-width: ${screens.mobile}px)`)
 
-    const [show, setShow] = useState(false)
-
     useEffect(() => {
         
 
     }, [])
 
     return (
-        <div className={`header ${show && `header_bg`}`}>
-            {/* <div ref={logoRef} className="header_banner">
-                <img id='logo'  src={logo} alt=""/>
-                <div ref={logoTextRef} className="banner_text">
-                    <span className='nzs'>Noakhali Zilla School</span>
-                    <span className='sc'>Science Club</span>
-                </div>
-            </div> */}
-            
-
+        <div className='header'>
             {
             mobile 
                 ? 

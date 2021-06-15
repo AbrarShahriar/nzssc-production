@@ -41,17 +41,15 @@
 
 
 .header .mobile_nav > *:not(.space) {
-    color: #0F1245;
-    background-color: #FF475A;
+    color: mintcream;
     border-radius: 50%;
     transform: scale(1.2);
-    margin-top: -40px;
-    flex: 0.1;
+    margin-top: -50px;
 }
 
 
 .header .mobile_nav .space {
-    flex: 0.9;
+    width: 90%;
     /* outline: 2px solid red; */
 }
 
