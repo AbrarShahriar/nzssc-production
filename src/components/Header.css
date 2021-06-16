@@ -5,12 +5,17 @@
     justify-content: space-between;
     /* outline: 2px solid red; */
     padding: 20px;
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     z-index: 99;
     height: 100px;
     transition: all 300ms ease-in;
+}
+@media (max-width: 600px) {
+    .header {
+        display: none;
+    }
 }
 
 .header_bg {
@@ -26,60 +31,75 @@
     margin-left: auto;
     margin-right: 50px;
 }
-@media (max-width: 600px) {
-    .header_items {
-        display: none;
-    }
-}
 
-.header .mobile_nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-
-.header .mobile_nav > *:not(.space) {
-    color: mintcream;
-    border-radius: 50%;
-    transform: scale(1.2);
-    margin-top: -50px;
-    margin-right: 20px;
-}
-
-
-.header .mobile_nav .space {
-    width: 90%;
-    /* outline: 2px solid red; */
-}
-
-.header_items > * {
-    margin: 0 20px;
-    text-decoration: none;
-    color: #fff;
-}
-
-.header_items > a {
-    transition: all 100ms ease;
+.mobile_nav .nav_icon {
     color: #0F1245;
+    /* outline: 2px solid red; */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    width: 20px;
+    height: 20px;
     background: #FF475A;
-    background-image: linear-gradient(90deg, #FF475A, #ff479d);
+    border-radius: 50%;
+    transform: scale(1.5);
+}
+
+
+
+.header_items .header_item {
+    position: relative;
+    margin: 0 20px;
+    transition: all 200ms ease;
+    color: #0F1245;
     padding: 10px 20px;
     border-radius: 20px;
     box-shadow: 1px 1px 7px -5px rgba(0,0,0,.75);
+    cursor: pointer;
+    overflow: hidden;
 
 }
 
-.header_items > a:hover {
-    transform: scale(1.1);
-    /* background-image: linear-gradient(90deg, #ff479d, #FF475A); */
-    filter: hue-rotate(10deg);
-
+.header_items .header_item:hover {
+    transform: scale(1.06);
 }
+
+.header_items .header_item:hover a {
+    transform: scale(1.2);
+}
+
+.header_items .header_item .item_bg {
+    width: calc(100% + 100%);
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    background-image: linear-gradient(90deg, #FF475A, #ff479d, #FF475A);
+    transition: transform 200ms ease;
+}
+
+.header_items .header_item:hover .item_bg {
+    transform: translateX(-50%);
+}
+
+.header_items .header_item a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 200ms ease;
+    position: relative;
+    z-index: 1;
+}
+
+
 
 .header_avatar {
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .header_banner {

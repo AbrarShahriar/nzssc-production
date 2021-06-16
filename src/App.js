@@ -11,6 +11,9 @@ import ContentCard from './components/ContentCard';
 import ss from './images/ss.png'
 import React from 'react';
 import TopicSelection from './components/TopicSelection';
+import bookLogo from './images/book-logo.png'
+import articleLogo from './images/article-logo.png'
+import newsLogo from './images/news-logo.png'
 
 
 function App() {
@@ -33,7 +36,7 @@ function App() {
 
         {/* NEWS(title) + SEARCH */}
         <form className="news-search title-addtition">
-          <Title title='news' />
+          <Title iconSrc={newsLogo} title='news' />
           {!mobile ?
             <div className="search search_desktop">
               <SearchOutlined />
@@ -75,7 +78,7 @@ function App() {
 
         {/* ARTICLES(title) + TOPIC Selection */}
         <div className="article-topicSelection title-addtition">
-          <Title title='articles' />
+          <Title iconSrc={articleLogo} title='articles' />
           <TopicSelection />
         </div>
         {/* ARTICLES */}

@@ -1,7 +1,7 @@
 .hero {
     /* padding-top: 50px; */
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden !important;
     display: grid;
     place-items: center;
     overflow: hidden;
@@ -22,19 +22,7 @@
     position: relative;
     z-index: 20;
 }
-
-.hero > * {
-    /* outline: 2px solid red; */
-
-}
-
 .hero_title {
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    /* text-align: left; */
-    
     color: white;
     text-shadow: 5px 5px rgba(0, 0, 0, .25);
 }
@@ -157,6 +145,12 @@
     animation: 
         fadeIn      500ms  ease    500ms  forwards
         ;
+}
+@media (max-width: 600px) {
+    .icon  {
+        width: 32px;
+        height: 32px;
+    }
 }
 
 .icon-1 {

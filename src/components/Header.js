@@ -24,24 +24,37 @@ function Header() {
     }, [])
 
     return (
-        <div className='header'>
+        <>
             {
             mobile 
                 ? 
                 <div className="mobile_nav">
-                    <div className="space"></div>
-                    <MoreVert />
+                    <MoreVert className="nav_icon" />
                 </div>
                 :
-                <div className="header_items">
-                    <Link to='/'>Home</Link>
-                    <Link to='/about'>About</Link>
-                    <Link to='/contact'>Contact</Link>
-                    <Link to='/join'>Join</Link>
-                    <Avatar className='header_avatar'/>
+                <div className="header">
+                    <div className="header_items">
+                        <div className="header_item">
+                            <div className="item_bg"></div>
+                            <Link to='/'>Home</Link>
+                        </div>
+                        <div className="header_item">
+                            <div className="item_bg"></div>
+                            <Link to='/about'>About</Link>
+                        </div>
+                        <div className="header_item">
+                            <div className="item_bg"></div>
+                            <Link to='/contact'>Contact</Link>
+                        </div>
+                        <div className="header_item">
+                            <div className="item_bg"></div>
+                            <Link to='/join'>Join</Link>
+                        </div>
+                        <Avatar className='header_avatar'/>
+                    </div>
                 </div>
             }
-        </div>
+        </>
     )
 }
 
