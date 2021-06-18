@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './Hero.css'
 import blob from '../images/gradient-blob.png'
 import Atom from './svg/Atom'
@@ -19,8 +19,54 @@ import Aos from "aos";
 function Hero() {
     const mobile = useMediaQuery(`(max-width: ${screens.mobile}px)`)
 
+    const nzsRef = useRef(null)
+    const scRef = useRef(null)
+
     useEffect(() => {
         Aos.init()
+
+        let nzsNode = nzsRef.current
+        let scNode = scRef.current
+
+        var nzsText = 'NZS'
+        var scText = 'Science Club'
+    
+        let i = 0,
+            j = 0,
+            delayOne, 
+            delayTwo,
+            animOneDelay = setTimeout(() => {
+                typeWriterOne()
+            }, 1500),
+            animTwoDelay = setTimeout(() => {
+                typeWriterTwo()
+            }, 2500),
+            speedOne = 175,
+            speedTwo = 125
+
+        const typeWriterOne = () => {
+            if(i < nzsText.length) {
+                nzsNode.innerText += nzsText.charAt(i)
+                i++
+                let delay = setTimeout(typeWriterOne, speedOne)
+            }
+        }
+        const typeWriterTwo = () => {
+            if(j < scText.length) {
+                if(j == 7) {
+                    scNode.innerHTML += '<span> </span>' 
+                } else {
+                    scNode.innerHTML += scText.charAt(j)
+                }
+                j++
+                let delay = setTimeout(typeWriterTwo, speedTwo)
+            }
+        }
+
+        return () => {
+            clearTimeout(animOneDelay)
+            clearTimeout(animTwoDelay)
+        }
     }, [])
 
     return (
@@ -37,8 +83,8 @@ function Hero() {
                 <div className="hero_banner slideLeft">
                     <img id='logo'  src={logo} alt=""/>
                     <div className="banner_text">
-                        <h1>NZS</h1>
-                        <h2>Science Club</h2>
+                        <h1 ref={nzsRef}></h1>
+                        <h2 ref={scRef}></h2>
                     </div>
                 </div>
                 <p className='subtitle fadeUp'>"Conserve resources, sustain life, educate humans to be technologically progressive."</p>

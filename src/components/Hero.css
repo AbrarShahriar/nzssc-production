@@ -15,6 +15,10 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    --typing1-ch: 3;
+    --typing2-ch: 12;
+    --typing-speed: 2;
 }
 
 .hero > img {
@@ -45,6 +49,7 @@
     font-size: 2.5em;
     line-height: 1em;
     margin-bottom: 10px;
+    width: 300px;
 }
 @media (max-width: 600px) {
     .hero_title .hero_banner h2 {
@@ -55,8 +60,9 @@
 .hero_title p {
     font-size: 1.2em;
     max-width: 400px;
-
-    line-height: 1.2em;
+    margin-top: 10px;
+    line-height: 1.4em;
+    word-spacing: .3rem;
 }
 
 .hero_banner {
@@ -102,6 +108,86 @@
     }
 }
 
+.typing {
+    /* outline: 2px solid red; */
+    width: fit-content;
+    font-family: sans-serif;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.typing::after, .typing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.typing1::after {
+    width: 100%;
+    left: 0;
+    background-color: #0F1245;
+    /* background-color: yellow; */
+    animation: 
+    typer1 750ms steps(var(--typing1-ch)) 1.5s forwards,
+    opacityFull 10ms 2.25s forwards;
+
+}
+
+.typing1::before {
+    width: 3px;
+    background-color: transparent;
+    animation: cursor1 750ms steps(var(--typing1-ch)) 1.5s forwards;
+    z-index: 4;
+    height: 90%;
+}
+
+.typing2::after {
+    width: 100%;
+    left: 0;
+    background-color: #0F1245;
+    /* background-color: yellow; */
+    animation: 
+    typer2 1.5s steps(var(--typing2-ch)) 3s forwards,
+    opacityFull 10ms 3.75s forwards;
+
+}
+
+.typing2::before {
+    width: 3px;
+    background-color: transparent;
+    animation: cursor2 1.5s steps(var(--typing2-ch)) 3s forwards;
+    z-index: 4;
+    height: 90%;
+
+}
+
+@keyframes typer2 {
+    100% {
+        transform: translateX(100%);
+    }
+}
+@keyframes cursor2 {
+    100% {
+        transform: translateX(calc(var(--typing2-ch) * 1.3rem));
+    }
+}
+@keyframes typer1 {
+    100% {
+        transform: translateX(100%);
+    }
+}
+@keyframes cursor1 {
+    100% {
+        transform: translateX(calc(var(--typing1-ch) * 2rem));
+    }
+}
+
+@keyframes opacityFull {
+    100% {
+        opacity: 0;
+    }
+}
 
 
 .slideLeft {
@@ -124,7 +210,7 @@
 
 @keyframes fadeUp {
     100% {
-        opacity: 0.8;
+        opacity: 0.7;
         transform: translateY(0);
     }
 }

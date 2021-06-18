@@ -1,12 +1,54 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './ContentCard.css'
 import { Link } from "react-router-dom";
 import { MoreHorizRounded } from '@material-ui/icons';
+import { gsap } from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-function ContentCard({ type, img, title, desc, tags, timestamp, author, authorImg }) {
+gsap.registerPlugin(ScrollTrigger)
+
+function ContentCard({ type, img, title, desc, tags, timestamp, author, authorImg, delay }) {
+
+    const cardRef = useRef(null)
+
+    useEffect(() => {
+
+        console.log(delay, delay*.5);
+        
+
+        const cardDom = cardRef.current
+    
+        const duration = .5
+
+        // var anim = gsap.timeline({duration})
+        // anim.from({
+        //     y: 50,
+        //     opacity: 0,
+        //     duration,
+        // })
+    
+        // ScrollTrigger.create({
+        //     trigger: cardDom,
+        //     start: 'bottom bottom',
+        //     onEnter: () => anim.play(0, {delay})
+        // })
+        gsap.from(cardDom, {
+            y: 50,
+            opacity: 0,
+            duration,
+            delay: delay,
+            scrollTrigger: {
+                trigger: cardDom,
+                start: 'bottom bottom',
+                toggleActions: 'play none none none',
+                once: true,
+                // markers: true,
+            }
+        })
+      }, [])
 
     return (
-        <div className='card'>
+        <div ref={cardRef} className={`card ${(type === 'article') && 'article_card'}`}>
 
             <div className="card_header">
                 {img && <img src={img} alt=""/>}
