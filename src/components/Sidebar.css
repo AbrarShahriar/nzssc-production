@@ -1,14 +1,24 @@
 .sidebar {
     background-color: gray;
-    height: 100%;
-    padding: 10px;
-    position: sticky;
+    height: 100vh;
+    position: fixed;
     top: 0;
+    overflow-x: hidden;
+    /* display: none; */
+    width: 0;
+    transition: all 200ms;
+}
+
+.sidebar.open {
+    /* display: block; */
+    padding: 10px;
+    width: 80px;
 }
 
 .sidebar_items {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .sidebar_item {
@@ -17,5 +27,15 @@
     background-color: lightgray;
     padding: 10px;
     border-radius: 10px;
+    display: grid;
+    place-items: center;
     cursor: pointer;
+    width: 60px;
+    height: 60px;
+}
+
+.sidebar_item .sidebar_icon {
+    width: 32px;
+    height: 32px;
+    /* outline: 2px solid red; */
 }

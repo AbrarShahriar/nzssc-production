@@ -2,18 +2,19 @@ import { Home, LibraryAddCheck, VideoCall } from '@material-ui/icons'
 import React from 'react'
 import './Sidebar.css'
 
-function Sidebar({ open, handleOpen, handleClose }) {
+function Sidebar({ open }) {
+    
     return (
-        <div className='sidebar'>
+        <div className={`sidebar ${open && 'open'}`}>
             <div className="sidebar_items">
                 <div className="sidebar_item">
-                    <Home fontSize='large'/>
+                    <Home className='sidebar_icon' />
                 </div>
                 <div className="sidebar_item">
-                    <LibraryAddCheck fontSize='large'/>
+                    <LibraryAddCheck className='sidebar_icon' />
                 </div>
                 <div className="sidebar_item">
-                    <VideoCall fontSize='large'/>
+                    <VideoCall className='sidebar_icon' />
                 </div>
             </div>
         </div>

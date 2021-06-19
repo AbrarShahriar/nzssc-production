@@ -7,7 +7,7 @@ function TitleExtension({ iconSrc, title, mobile, Extension }) {
         <div className='title-addtition'>
             <Title iconSrc={iconSrc} title={title} />
 
-            <Extension mobile={mobile} />
+            {Extension && <Extension mobile={mobile} />}
         </div>
     )
 }

@@ -105,7 +105,11 @@ function Hero() {
                         <h2 ref={scRef}></h2>
                     </div>
                 </div>
-                <p className='subtitle fadeUp'>"Conserve resources, sustain life, educate humans to be technologically progressive."</p>
+                <p className='subtitle fadeUp'>
+                    Conserve resources, <br/>
+                    sustain life, <br/>
+                    educate humans to be <br/>technologically progressive.
+                </p>
             </div>
 
             {!mobile && <img className='zoom' src={ill} alt=""/>}

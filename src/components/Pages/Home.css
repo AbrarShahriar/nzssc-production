@@ -4,8 +4,8 @@
   align-items: stretch;
 }
 
-.main .side {
-  
+.main .hidden {
+  display: none;
 }
 
 .main .home {
@@ -13,6 +13,15 @@
   flex: 1;
   position: relative;
   overflow-y: hidden;
+  transition: all 200ms;
+}
+
+.main .show {
+  width: 80px;
+}
+
+.main .home_margin_left {
+  margin-left: 80px;
 }
 
 .overlay {

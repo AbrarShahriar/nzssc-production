@@ -4,7 +4,7 @@ import './ExploreBtn.css'
 function ExploreBtn() {
     return (
         <div className="load_more">
-            <span>Explore</span>
+            <span>Explore More</span>
             {/* <CircularProgress /> */}
         </div>
     )
