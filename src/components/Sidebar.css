@@ -1,0 +1,21 @@
+.sidebar {
+    background-color: gray;
+    height: 100%;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar_items {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar_item {
+    margin: 30px 0;
+    /* outline: 2px solid red; */
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}

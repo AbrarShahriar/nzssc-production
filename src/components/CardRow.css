@@ -1,0 +1,31 @@
+.cards {
+  margin: 50px auto;
+  width: 90%;
+  padding: 20px 0 20px 0;
+}
+
+.cards::-webkit-scrollbar {
+  display: none;
+}
+
+.cards {
+  -ms-overflow-style: none;
+  /* scrollbar-width: none; */
+  /* overflow: hidden; */
+}
+
+.news-cards {
+  overflow-y: hidden !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  overflow-x: auto;
+}
+
+.article-cards {
+  overflow-y: hidden !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: auto;
+}

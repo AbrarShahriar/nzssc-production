@@ -15,20 +15,34 @@ import { useMediaQuery } from '@material-ui/core';
 import { screens } from "../screens";
 import logo from '../images/blue-logo.svg'
 import Aos from "aos";
+import Rellax from 'rellax'
 
 function Hero() {
     const mobile = useMediaQuery(`(max-width: ${screens.mobile}px)`)
 
+    const rellaxRef = useRef(null)
     const nzsRef = useRef(null)
     const scRef = useRef(null)
 
     useEffect(() => {
-        Aos.init()
+
+        
+        let rellaxNode =rellaxRef.current
+
+        new Rellax(rellaxNode, {
+            speed: 5,
+            center: true,
+            wrapper: null,
+            round: true,
+            vertical: true,
+            horizontal: false
+        })
+
 
         let nzsNode = nzsRef.current
         let scNode = scRef.current
 
-        var nzsText = 'NZS'
+        var nzsText = 'Noakhali Zilla School'
         var scText = 'Science Club'
     
         let i = 0,
@@ -37,16 +51,20 @@ function Hero() {
             delayTwo,
             animOneDelay = setTimeout(() => {
                 typeWriterOne()
-            }, 1500),
+            }, 1000),
             animTwoDelay = setTimeout(() => {
                 typeWriterTwo()
-            }, 2500),
-            speedOne = 175,
+            }, 4000),
+            speedOne = 125,
             speedTwo = 125
 
         const typeWriterOne = () => {
             if(i < nzsText.length) {
-                nzsNode.innerText += nzsText.charAt(i)
+                if(i == 8 || i == 14) {
+                    nzsNode.innerHTML += '<span> </span>'
+                } else {
+                    nzsNode.innerHTML += nzsText.charAt(i)
+                }
                 i++
                 let delay = setTimeout(typeWriterOne, speedOne)
             }

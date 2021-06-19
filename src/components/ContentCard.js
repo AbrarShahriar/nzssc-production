@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { MoreHorizRounded } from '@material-ui/icons';
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Fade from "react-reveal/Fade";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -13,41 +14,27 @@ function ContentCard({ type, img, title, desc, tags, timestamp, author, authorIm
 
     useEffect(() => {
 
-        console.log(delay, delay*.5);
-        
-
         const cardDom = cardRef.current
     
         const duration = .5
 
-        // var anim = gsap.timeline({duration})
-        // anim.from({
+        // gsap.from(cardDom, {
         //     y: 50,
         //     opacity: 0,
         //     duration,
+        //     delay: delay,
+        //     scrollTrigger: {
+        //         trigger: cardDom,
+        //         start: 'bottom bottom',
+        //         toggleActions: 'play none none none',
+        //         once: true,
+        //         // markers: true,
+        //     }
         // })
-    
-        // ScrollTrigger.create({
-        //     trigger: cardDom,
-        //     start: 'bottom bottom',
-        //     onEnter: () => anim.play(0, {delay})
-        // })
-        gsap.from(cardDom, {
-            y: 50,
-            opacity: 0,
-            duration,
-            delay: delay,
-            scrollTrigger: {
-                trigger: cardDom,
-                start: 'bottom bottom',
-                toggleActions: 'play none none none',
-                once: true,
-                // markers: true,
-            }
-        })
       }, [])
 
     return (
+        <Fade bottom delay={delay*100}>
         <div ref={cardRef} className={`card ${(type === 'article') && 'article_card'}`}>
 
             <div className="card_header">
@@ -84,6 +71,7 @@ function ContentCard({ type, img, title, desc, tags, timestamp, author, authorIm
             }
 
         </div>
+        </Fade>
     )
 }
 
